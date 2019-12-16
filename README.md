@@ -6,6 +6,8 @@ Please read the word file in documents folder for detailed explanation about the
 Also, you can take a look at controllers and services to learn more about our backend services.
 
 # Java script code
+This code is used to deploy the Chatbot to the website.
+Note that this only works if the website is authenticated.
 ```
 <script src="https://lex-web-ui-codebuilddeploy-1v905k1aq-webappbucket-k4xrkj0nobqh.s3.amazonaws.com/lex-web-ui-loader.min.js"></script>
 
