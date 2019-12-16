@@ -22,7 +22,8 @@ class ApiService {
         return result
     }
 
-    // This function gets the tuition by the user.
+    // This function gets the tuition by the user. 
+    // This function should be in OasService (FIX!)
     def getTuitionByUser(params) {
         def result = [error: null, success: true, programs: null, code: null, costs: null]
         try {
@@ -359,6 +360,7 @@ class ApiService {
         return result
     }
 
+    // This function gets the tuition value from OASService, and renders it with the message.
     def checkIfTuitionIsSent(def params) {
         def result = [success: true, error: false, tuitionAccepted: 0, message: ""]
         try {
