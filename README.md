@@ -5,6 +5,9 @@ Chatbot service project for Intellisoft Development Inc.
 Please read the word file in documents folder for detailed explanation about the website.
 Also, you can take a look at controllers and services to learn more about our backend services.
 
+# Sample Image
+![Chatbot service transcript index](https://github.com/julielee9067/ChatbotService/blob/master/src/groovy/ca/georgebrown/ChatbotServiceIndex.png)
+
 # Contribution
 My contributions to this project include, but not limited to, ```grails-app/controllers, services, and views.```
 
@@ -28,3 +31,4 @@ var loaderCfg = {lex: { "initialText": introMessage, "sessionAttributes": {"GBCT
 loader.load(loaderCfg).catch(function (error) { console.error(error); });
 </script>
 ```
+
