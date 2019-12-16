@@ -1,3 +1,0 @@
-//# sourceMappingURL=jquery.ui.datepicker-nn.js.map
-jQuery(function(a){a.datepicker.regional.nn={closeText:"Lukk",prevText:"&#xAB;F\u00f8rre",nextText:"Neste&#xBB;",currentText:"I dag",monthNames:"januar februar mars april mai juni juli august september oktober november desember".split(" "),monthNamesShort:"jan feb mar apr mai jun jul aug sep okt nov des".split(" "),dayNamesShort:"sun m\u00e5n tys ons tor fre lau".split(" "),dayNames:"sundag m\u00e5ndag tysdag onsdag torsdag fredag laurdag".split(" "),dayNamesMin:"su m\u00e5 ty on to fr la".split(" "),
-weekHeader:"Veke",dateFormat:"dd.mm.yy",firstDay:1,isRTL:!1,showMonthAfterYear:!1,yearSuffix:""};a.datepicker.setDefaults(a.datepicker.regional.nn)});

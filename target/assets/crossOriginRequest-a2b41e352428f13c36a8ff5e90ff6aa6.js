@@ -1,2 +1,0 @@
-//# sourceMappingURL=crossOriginRequest.js.map
-respondToSizingMessage=function(a){"sizing?"==a.data&&a.source.postMessage("sizing:"+$("html").height()+","+$("html").width(),a.origin)};window.addEventListener("message",respondToSizingMessage,!1);

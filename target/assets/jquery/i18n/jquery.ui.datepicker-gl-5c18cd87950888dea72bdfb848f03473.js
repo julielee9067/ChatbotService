@@ -1,3 +1,0 @@
-//# sourceMappingURL=jquery.ui.datepicker-gl.js.map
-jQuery(function(a){a.datepicker.regional.gl={closeText:"Pechar",prevText:"&#x3C;Ant",nextText:"Seg&#x3E;",currentText:"Hoxe",monthNames:"Xaneiro Febreiro Marzo Abril Maio Xu\u00f1o Xullo Agosto Setembro Outubro Novembro Decembro".split(" "),monthNamesShort:"Xan Feb Mar Abr Mai Xu\u00f1 Xul Ago Set Out Nov Dec".split(" "),dayNames:"Domingo Luns Martes M\u00e9rcores Xoves Venres S\u00e1bado".split(" "),dayNamesShort:"Dom Lun Mar M\u00e9r Xov Ven S\u00e1b".split(" "),dayNamesMin:"Do Lu Ma M\u00e9 Xo Ve S\u00e1".split(" "),
-weekHeader:"Sm",dateFormat:"dd/mm/yy",firstDay:1,isRTL:!1,showMonthAfterYear:!1,yearSuffix:""};a.datepicker.setDefaults(a.datepicker.regional.gl)});

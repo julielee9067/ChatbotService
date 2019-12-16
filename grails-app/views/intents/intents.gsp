@@ -1,10 +1,3 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: admin
-  Date: 2019-06-25
-  Time: 09:30
---%>
-
 <%@ page import="ca.georgebrown.chatbot.Setting" contentType="text/html;charset=UTF-8" %>
 <g:set var="settingService" bean="settingService"/>
 
