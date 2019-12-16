@@ -4,6 +4,7 @@ import grails.transaction.Transactional
 
 @Transactional
 class SettingService {
+    // This function gets the value for the specific setting by its code.
     def get(String code) {
         Setting setting = Setting.findByCode(code)
         if (!setting) return null
@@ -36,6 +37,7 @@ class SettingService {
         return setting.value
     }
 
+    // This function sets the setting value to the value given.
     def set(String code, String val) {
         Setting setting = Setting.findByCode(code)
         if (!setting) return false
@@ -43,6 +45,4 @@ class SettingService {
         setting.save(flush: true)
         return true
     }
-
-
 }
