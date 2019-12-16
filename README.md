@@ -6,7 +6,7 @@ Please read the word file in documents folder for detailed explanation about the
 Also, you can take a look at controllers and services to learn more about our backend services.
 
 # Contribution
-My contributions to this project include, but not limited to, grails-app/controllers, services, and views.
+My contributions to this project include, but not limited to, ```grails-app/controllers, services, and views.```
 
 # Java script code
 This code is used to deploy the Chatbot to the website.
