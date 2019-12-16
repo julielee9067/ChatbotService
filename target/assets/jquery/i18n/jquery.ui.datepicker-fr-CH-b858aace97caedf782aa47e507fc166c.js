@@ -1,0 +1,3 @@
+//# sourceMappingURL=jquery.ui.datepicker-fr-CH.js.map
+jQuery(function(a){a.datepicker.regional["fr-CH"]={closeText:"Fermer",prevText:"&#x3C;Pr\u00e9c",nextText:"Suiv&#x3E;",currentText:"Courant",monthNames:"janvier f\u00e9vrier mars avril mai juin juillet ao\u00fbt septembre octobre novembre d\u00e9cembre".split(" "),monthNamesShort:"janv. f\u00e9vr. mars avril mai juin juil. ao\u00fbt sept. oct. nov. d\u00e9c.".split(" "),dayNames:"dimanche lundi mardi mercredi jeudi vendredi samedi".split(" "),dayNamesShort:"dim. lun. mar. mer. jeu. ven. sam.".split(" "),
+dayNamesMin:"DLMMJVS".split(""),weekHeader:"Sm",dateFormat:"dd.mm.yy",firstDay:1,isRTL:!1,showMonthAfterYear:!1,yearSuffix:""};a.datepicker.setDefaults(a.datepicker.regional["fr-CH"])});

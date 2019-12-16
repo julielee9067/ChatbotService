@@ -1,0 +1,3 @@
+//# sourceMappingURL=jquery.ui.datepicker-it.js.map
+jQuery(function(a){a.datepicker.regional.it={closeText:"Chiudi",prevText:"&#x3C;Prec",nextText:"Succ&#x3E;",currentText:"Oggi",monthNames:"Gennaio Febbraio Marzo Aprile Maggio Giugno Luglio Agosto Settembre Ottobre Novembre Dicembre".split(" "),monthNamesShort:"Gen Feb Mar Apr Mag Giu Lug Ago Set Ott Nov Dic".split(" "),dayNames:"Domenica Luned\u00ec Marted\u00ec Mercoled\u00ec Gioved\u00ec Venerd\u00ec Sabato".split(" "),dayNamesShort:"Dom Lun Mar Mer Gio Ven Sab".split(" "),dayNamesMin:"Do Lu Ma Me Gi Ve Sa".split(" "),
+weekHeader:"Sm",dateFormat:"dd/mm/yy",firstDay:1,isRTL:!1,showMonthAfterYear:!1,yearSuffix:""};a.datepicker.setDefaults(a.datepicker.regional.it)});

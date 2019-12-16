@@ -1,0 +1,8 @@
+{
+"version":3,
+"file":"bootstrap-transition.js",
+"lineCount":3,
+"mappings":"A;AASA,CAAC,QAAS,CAACA,CAAD,CAAI,CAMZC,QAASA,EAAa,EAAG,CACvB,IAAIC,EAAKC,QAAAC,cAAA,CAAuB,WAAvB,CAAT,CAEIC,EAAqB,CACvBC,iBAAmB,qBADI,CAEvBC,cAAmB,eAFI,CAGvBC,YAAmB,+BAHI,CAIvBC,WAAmB,eAJI,CAFzB,CASSC,CAAT,KAASA,CAAT,GAAiBL,EAAjB,CACE,GAAuBM,IAAAA,EAAvB,GAAIT,CAAAU,MAAA,CAASF,CAAT,CAAJ,CACE,MAAO,CAAEG,IAAKR,CAAA,CAAmBK,CAAnB,CAAP,CAIX,OAAO,CAAA,CAhBgB,CAoBzBV,CAAAc,GAAAC,qBAAA,CAA4BC,QAAS,CAACC,CAAD,CAAW,CAC9C,IAAIC,EAAS,CAAA,CAAb,CACIC,EAAM,IACVnB,EAAA,CAAE,IAAF,CAAAoB,IAAA,CAAY,iBAAZ,CAA+B,QAAS,EAAG,CAAEF,CAAA,CAAS,CAAA,CAAX,CAA3C,CAEAG,WAAA,CADeC,QAAS,EAAG,CAAOJ,CAAL,EAAalB,CAAA,CAAEmB,CAAF,CAAAI,QAAA,CAAevB,CAAAwB,QAAAf,WAAAI,IAAf,CAAf,CAC3B,CAAqBI,CAArB,CACA,OAAO,KANuC,CAShDjB,EAAA,CAAE,QAAS,EAAG,CACZA,CAAAwB,QAAAf,WAAA,CAAuBR,CAAA,EAElBD,EAAAwB,QAAAf,WAAL;CAEAT,CAAAyB,MAAAC,QAAAC,gBAFA,CAEkC,CAChCC,SAAU5B,CAAAwB,QAAAf,WAAAI,IADsB,CAEhCgB,aAAc7B,CAAAwB,QAAAf,WAAAI,IAFkB,CAGhCiB,OAAQA,QAAS,CAACC,CAAD,CAAI,CACnB,GAAI/B,CAAA,CAAE+B,CAAAC,OAAF,CAAAC,GAAA,CAAe,IAAf,CAAJ,CAA0B,MAAOF,EAAAG,UAAAC,QAAAC,MAAA,CAA0B,IAA1B,CAAgCC,SAAhC,CADd,CAHW,CAFlC,CAHY,CAAd,CAnCY,CAAb,CAiDCC,MAjDD;",
+"sources":["bootstrap-transition.unminified.js"],
+"names":["$","transitionEnd","el","document","createElement","transEndEventNames","WebkitTransition","MozTransition","OTransition","transition","name","undefined","style","end","fn","emulateTransitionEnd","$.fn.emulateTransitionEnd","duration","called","$el","one","setTimeout","callback","trigger","support","event","special","bsTransitionEnd","bindType","delegateType","handle","e","target","is","handleObj","handler","apply","arguments","jQuery"]
+}

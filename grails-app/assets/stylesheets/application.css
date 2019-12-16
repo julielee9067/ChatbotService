@@ -1,0 +1,306 @@
+/*
+* This is a manifest file that'll be compiled into application.css, which will include all the files
+* listed below.
+*
+* Any CSS file within this directory can be referenced here using a relative path.
+*
+* You're free to add application-wide styles to this file and they'll appear at the top of the
+* compiled file, but it's generally better to create a new file per style scope.
+*
+*= require font-awesome
+*= require bootstrap
+*= require_self
+*= require ajax-spinner
+*/
+html, body {
+    font-size: 100% !important;
+}
+.align-right {
+    text-align:right;
+}
+.display-none {
+    display:none;
+}
+html {
+    position: relative;
+    min-height: 100%;
+}
+main {
+    margin-bottom: 140px; /* Margin bottom by footer height */
+}
+.footer {
+    /*position: absolute;*/
+    bottom: 0;
+    width: 100%;
+    height: 100px; /* Set the fixed height of the footer here */
+    line-height: 50px; /* Vertically center the text there */
+    background-color: #f5f5f5;
+    text-align: center;
+    color: #444444;
+    font-size: 14px;
+    /*padding-top: 10px;*/
+    box-shadow: 0 500px 0 500px #f5f5f5;
+    float: left;
+    clear: both;
+    margin-top: 50px;
+}
+/*.nav-button {
+    border: 1px solid #56aaff;
+    color: #56aaff;
+    background: none;
+    width: 195px;
+}*/
+.nav.navbar-nav.navbar-right{
+    margin-right: 0px;
+}
+.lock-button {
+    border: 1px solid red;
+    color: red;
+    background: none;
+    float: right;
+    width: 195px;
+}
+
+.reportTable table {
+    border-collapse: collapse;
+    table-layout: fixed;
+    border-spacing: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.col-centered{ float: none; margin: 0 auto; }
+
+.reportTable tr:last-child td:last-child {
+    -moz-border-radius-bottomright: 5px;
+    -webkit-border-bottom-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.reportTable table tr:first-child td:first-child {
+    -moz-border-radius-topleft: 5px;
+    -webkit-border-top-left-radius: 5px;
+    border-top-left-radius: 5px;
+}
+
+.reportTable table tr:first-child td:last-child {
+    -moz-border-radius-topright: 5px;
+    -webkit-border-top-right-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.reportTable tr:last-child td:first-child {
+    -moz-border-radius-bottomleft: 5px;
+    -webkit-border-bottom-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.reportTable tr:hover td {
+
+}
+
+.reportTable tr:nth-child(odd) {
+    background-color: #cccccc;
+}
+
+.reportTable tr:nth-child(even) {
+    background-color: #ffffff;
+}
+
+.reportTable td {
+    vertical-align: middle;
+
+    border: 1px solid #000000;
+    border-width: 0px 1px 1px 0px;
+    text-align: left;
+    padding: 7px;
+    font-size: 12px;
+    font-family: Arial;
+    font-weight: normal;
+    color: #000000;
+}
+
+.reportTable tr:last-child td {
+    border-width: 0px 1px 0px 0px;
+}
+
+.reportTable tr td:last-child {
+    border-width: 0px 0px 1px 0px;
+}
+
+.reportTable tr:last-child td:last-child {
+    border-width: 0px 0px 0px 0px;
+}
+
+.reportTable tr:first-child th {
+    background: -o-linear-gradient(bottom, #56aaff 5%, #005fbf 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #56aaff), color-stop(1, #005fbf));
+    background: -moz-linear-gradient(center top, #56aaff 5%, #005fbf 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#56aaff", endColorstr="#005fbf");
+    background: -o-linear-gradient(top, #56aaff, #005fbf);
+
+    background-color: #56aaff;
+    border: 0px solid #000000;
+    text-align: center;
+    border-width: 0px 0px 1px 1px;
+    font-size: 14px;
+    font-family: Arial;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.reportTable tr:first-child:hover td {
+    background: -o-linear-gradient(bottom, #56aaff 5%, #005fbf 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #56aaff), color-stop(1, #005fbf));
+    background: -moz-linear-gradient(center top, #56aaff 5%, #005fbf 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#56aaff", endColorstr="#005fbf");
+    background: -o-linear-gradient(top, #56aaff, #005fbf);
+
+    background-color: #56aaff;
+}
+
+.reportTable tr:first-child td:first-child {
+    border-width: 0px 0px 1px 0px;
+}
+
+.reportTable tr:first-child td:last-child {
+    border-width: 0px 0px 1px 1px;
+}
+
+.userEditForm {
+    margin: 2em;
+}
+
+.userEditForm table{
+    margin-bottom: 2em;
+}
+
+
+
+
+.number {
+    text-align: right!important;
+}
+
+#userCreate{
+    display: none;
+}
+
+span.navbar-title {
+    color: #1b5da3;
+
+    font-size: 30px;
+    font-weight: 500;
+    margin-left: 10px;
+}
+
+.navbar-header {
+    /*padding: 10px;*/
+}
+
+.nav.nav-pills{
+    padding-left: 10px;
+}
+
+
+
+
+
+#projectsList, #activitiesList, #clientsList{
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+#projectsList .btn, #activitiesList .btn, #clientsList .btn{
+    margin-bottom: 10px !important;
+}
+
+.projectDetail{
+    max-width: 400px;
+}
+
+.pageTitle {
+    color: #1b5da3; font-size: 40px;
+    text-align: center;
+}
+
+.center {
+    margin: auto;
+    width: 50%;
+}
+
+.tableBorder {
+    border: 3px solid  #1b5da3;
+    padding: 10px;
+}
+
+.settingsTextbox {width: 800px;}
+
+.btn-circle.btn-lg {
+    width: 50px;
+    height: 50px;
+    padding: 10px 16px;
+    font-size: 18px;
+    line-height: 1.33;
+    border-radius: 25px;
+}
+.btn-circle.btn-xl {
+    width: 70px;
+    height: 70px;
+    padding: 10px 16px;
+    font-size: 24px;
+    line-height: 1.33;
+    border-radius: 35px;
+}
+.navbar{
+    border-radius:0 !important;
+}
+.required label:before {
+    content: " *";
+    display: inline;
+    color: red;
+    padding-right: 10px;
+}
+
+span.error {
+    background: #fff3f3;
+    color: #cc0000;
+}
+
+@media (min-width: 1600px) {
+    .card{
+        max-width:1600px;
+        margin:0 auto;
+    }
+}
+.table-scroll  {
+    display: block;
+    max-height: 300px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+.form-date-width{
+    width: 200px!important;
+}
+.card{
+    margin:0 auto!important;
+}
+
+.right {
+    text-align: right!important;
+}
+
+.notice {
+    color: firebrick;
+}
+.bg-light {
+    background-color: #f8f9fa!important;
+}
+.navbar{
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}

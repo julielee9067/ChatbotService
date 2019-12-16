@@ -1,0 +1,3 @@
+//# sourceMappingURL=jquery.ui.datepicker-eu.js.map
+jQuery(function(a){a.datepicker.regional.eu={closeText:"Egina",prevText:"&#x3C;Aur",nextText:"Hur&#x3E;",currentText:"Gaur",monthNames:"urtarrila otsaila martxoa apirila maiatza ekaina uztaila abuztua iraila urria azaroa abendua".split(" "),monthNamesShort:"urt. ots. mar. api. mai. eka. uzt. abu. ira. urr. aza. abe.".split(" "),dayNames:"igandea astelehena asteartea asteazkena osteguna ostirala larunbata".split(" "),dayNamesShort:"ig. al. ar. az. og. ol. lr.".split(" "),dayNamesMin:"ig al ar az og ol lr".split(" "),
+weekHeader:"As",dateFormat:"yy-mm-dd",firstDay:1,isRTL:!1,showMonthAfterYear:!1,yearSuffix:""};a.datepicker.setDefaults(a.datepicker.regional.eu)});

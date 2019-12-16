@@ -1,0 +1,8 @@
+{
+"version":3,
+"file":"crossOriginRequest.js",
+"lineCount":2,
+"mappings":"A;AAAAA,sBAAA,CAAyBA,QAAQ,CAACC,CAAD,CAAI,CAGpB,SAAb,EAAGA,CAAAC,KAAH,EACID,CAAAE,OAAAC,YAAA,CAAqB,SAArB,CAA+BC,CAAA,CAAE,MAAF,CAAAC,OAAA,EAA/B,CAAkD,GAAlD,CAAsDD,CAAA,CAAE,MAAF,CAAAE,MAAA,EAAtD,CAAyEN,CAAAO,OAAzE,CAJ6B,CAQrCC,OAAAC,iBAAA,CAAwB,SAAxB,CAAmCV,sBAAnC,CAA2D,CAAA,CAA3D;",
+"sources":["crossOriginRequest.unminified.js"],
+"names":["respondToSizingMessage","e","data","source","postMessage","$","height","width","origin","window","addEventListener"]
+}

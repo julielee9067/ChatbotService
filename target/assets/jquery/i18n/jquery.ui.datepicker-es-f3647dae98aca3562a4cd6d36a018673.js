@@ -1,0 +1,3 @@
+//# sourceMappingURL=jquery.ui.datepicker-es.js.map
+jQuery(function(a){a.datepicker.regional.es={closeText:"Cerrar",prevText:"&#x3C;Ant",nextText:"Sig&#x3E;",currentText:"Hoy",monthNames:"enero febrero marzo abril mayo junio julio agosto septiembre octubre noviembre diciembre".split(" "),monthNamesShort:"ene feb mar abr may jun jul ogo sep oct nov dic".split(" "),dayNames:"domingo lunes martes mi\u00e9rcoles jueves viernes s\u00e1bado".split(" "),dayNamesShort:"dom lun mar mi\u00e9 juv vie s\u00e1b".split(" "),dayNamesMin:"DLMXJVS".split(""),weekHeader:"Sm",
+dateFormat:"dd/mm/yy",firstDay:1,isRTL:!1,showMonthAfterYear:!1,yearSuffix:""};a.datepicker.setDefaults(a.datepicker.regional.es)});

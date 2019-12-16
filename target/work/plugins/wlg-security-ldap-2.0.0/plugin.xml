@@ -1,0 +1,11 @@
+<plugin name='wlg-security-ldap' version='2.0.0' grailsVersion='2.0 &gt; *'>
+  <author>Jeffrey Whynot</author>
+  <authorEmail>jwhynot@whylightgroup.com</authorEmail>
+  <title>WhyLight Group LDAP Security Extensions Plugin</title>
+  <description>WhyLight Group LDAP Security Extensions Plugin</description>
+  <documentation>http://www.whylightgroup.com/framework/plugin/wlg-security-ldap</documentation>
+  <type>WlgSecurityLdapGrailsPlugin</type>
+  <resources>
+    <resource>WlgSecurityLdapDefaultConfig</resource>
+  </resources>
+</plugin>

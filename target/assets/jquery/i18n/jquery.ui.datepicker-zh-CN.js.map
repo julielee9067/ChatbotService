@@ -1,0 +1,8 @@
+{
+"version":3,
+"file":"jquery.ui.datepicker-zh-CN.js",
+"lineCount":3,
+"mappings":"A;AAEAA,MAAA,CAAO,QAAQ,CAACC,CAAD,CAAG,CACjBA,CAAAC,WAAAC,SAAA,CAAsB,OAAtB,CAAA,CAAiC,CAChCC,UAAW,cADqB,CAEhCC,SAAU,oBAFsB,CAGhCC,SAAU,oBAHsB,CAIhCC,YAAa,cAJmB,CAKhCC,WAAY,yKAAA,MAAA,CAAA,GAAA,CALoB,CAOhCC,gBAAiB,yKAAA,MAAA,CAAA,GAAA,CAPe;AAShCC,SAAU,sIAAA,MAAA,CAAA,GAAA,CATsB,CAUhCC,cAAe,4FAAA,MAAA,CAAA,GAAA,CAViB,CAWhCC,YAAa,4CAAA,MAAA,CAAA,EAAA,CAXmB,CAYhCC,WAAY,QAZoB,CAahCC,WAAY,UAboB,CAchCC,SAAU,CAdsB,CAehCC,MAAO,CAAA,CAfyB,CAgBhCC,mBAAoB,CAAA,CAhBY,CAiBhCC,WAAY,QAjBoB,CAkBjCjB,EAAAC,WAAAiB,YAAA,CAAyBlB,CAAAC,WAAAC,SAAA,CAAsB,OAAtB,CAAzB,CAnBiB,CAAlB;",
+"sources":["jquery.ui.datepicker-zh-CN.unminified.js"],
+"names":["jQuery","$","datepicker","regional","closeText","prevText","nextText","currentText","monthNames","monthNamesShort","dayNames","dayNamesShort","dayNamesMin","weekHeader","dateFormat","firstDay","isRTL","showMonthAfterYear","yearSuffix","setDefaults"]
+}

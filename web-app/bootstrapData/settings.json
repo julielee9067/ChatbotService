@@ -1,0 +1,18 @@
+{
+  "ipWhitelist": {
+    "properties": {
+      "description": "Allowed IP Addresses for REST api",
+      "type": "list",
+      "value": "0:0",
+      "seq": 100
+    }
+  },
+  "authenticationRequired": {
+    "properties": {
+      "description": "Required authentication via username&password for REST api",
+      "type": "boolean",
+      "value": "false",
+      "seq": 200
+   }
+  }
+}

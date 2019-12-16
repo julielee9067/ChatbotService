@@ -1,0 +1,12 @@
+<plugin name='wlg-security' version='1.0.0' grailsVersion='2.0 &gt; *'>
+  <author>Jeffrey Whynot</author>
+  <authorEmail>jwhynot@whylightgroup.com</authorEmail>
+  <title>WhyLight Group Security Extensions Plugin</title>
+  <description>WhyLight Group Security Extensions Plugin</description>
+  <documentation>http://www.whylightgroup.com/framework/plugin/wlg-security</documentation>
+  <type>WlgSecurityGrailsPlugin</type>
+  <resources>
+    <resource>DefaultWlgSecurityConfig</resource>
+    <resource>com.whylightgroup.constraint.PasswordConstraint</resource>
+  </resources>
+</plugin>
