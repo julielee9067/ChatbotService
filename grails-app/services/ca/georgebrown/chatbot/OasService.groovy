@@ -123,6 +123,7 @@ class OasService {
         return costs
     }
 
+    // You need to add the function to the list if you wish to access any of the backend service functions without authentication.
     def getPublicFunctions() {
         def publicFunctionList = []
         publicFunctionList.add('getTuitionByCode')
@@ -130,6 +131,7 @@ class OasService {
         return publicFunctionList
     }
 
+    // This function returns first name, last name, email address, and student ID by the user ID to send out the email.
     def getUserInfoForEmail(def userId) {
         Sql sql = Sql.newInstance(dataSource_oas)
         def result = sql.rows("Select firstname, lastname, emerg_email, actual_bannerid from applicant where appuser_id = :userId", [userId: userId])
@@ -182,6 +184,7 @@ class OasService {
         return null
     }
 
+    // This function returns the course code by the course name.
     def findProgramCode(search_text) {
         Sql sql = Sql.newInstance(dataSource_oas)
         search_text = search_text.split(" ")
@@ -201,6 +204,7 @@ class OasService {
         return result
     }
 
+    // This function returns the app ID by the username of the student.
     def findAppidByUsername(username) {
         Sql sql = Sql.newInstance(dataSource_oas)
         def app = sql.firstRow("Select a.id from appuser join applicant a on appuser.id = a.appuser_id where appuser.username = :username", [username: username])
@@ -208,6 +212,7 @@ class OasService {
         return app?.id
     }
 
+    // This function authenticates the application for the agents.
     def authorizeAppidForAgents(userId, role, appId) {
         Sql sql = Sql.newInstance(dataSource_oas)
         def target
@@ -231,6 +236,7 @@ class OasService {
         return false
     }
 
+    // This function returns the list of applications by the agents.
     def listAgentApps(userId, role, max) {
         def appuserId = userId?.toLong()
         def aList = []
@@ -277,6 +283,7 @@ class OasService {
         return aList
     }
 
+    // This function returns the list of applicants assigned to specific agent.
     def getApplicantsByAgent(userId) {
         Sql sql
         sql = Sql.newInstance(dataSource_oas)
@@ -290,6 +297,7 @@ class OasService {
         return applicants
     }
 
+    // This function returns the list of applicants assigned to specific agent counselor.
     def getApplicantsByAgentCounselor(def userId) {
         Sql sql
         sql = Sql.newInstance(dataSource_oas)
@@ -301,6 +309,7 @@ class OasService {
         return applicants
     }
 
+    // Helper funtion to get formatted date.
     def getFormattedDate(def TimeSent) {
         def year = TimeSent.substring(0, 4)
         def monthCode = TimeSent.substring(5, 7)
@@ -352,6 +361,7 @@ class OasService {
         return date
     }
 
+    // This function returns the user name by user ID.
     def getUserName(userId) {
         def name = ""
         def roleId = getRole(userId)
@@ -378,6 +388,7 @@ class OasService {
         return name
     }
 
+    // This function returns the role of the user. (Applicant/agent)
     def getRole(userId) {
         def role = 0
         Sql sql = Sql.newInstance(dataSource_oas)
@@ -389,6 +400,7 @@ class OasService {
         return role
     }
 
+    // This function returns the duration of the program by the course code input.
     def getProgramDuration(def code) {
         def duration = ""
         Sql sql
@@ -401,6 +413,7 @@ class OasService {
         return duration
     }
 
+    // This function gets the agent assist by the student's bannder ID.
     def getAgentAssisted(def bannerId) {
         def assisted = ""
         Sql sql
@@ -413,6 +426,7 @@ class OasService {
         return assisted
     }
 
+    // This function gets the agent's name by provided banner ID of the student.
     def getAgentName(def bannerId) {
         def agent = ""
         Sql sql
@@ -425,6 +439,7 @@ class OasService {
         return agent
     }
 
+    // This function authenticate the user by the user ID and Lex Chat token.
     def authUser(String userId, String token) {
         boolean auth = false
         Sql sql = Sql.newInstance(dataSource_oas)
@@ -436,6 +451,7 @@ class OasService {
         return auth
     }
 
+    // This function returns the user's name by app ID.
     def authAppDetails(appId) {
         Sql sql = Sql.newInstance(dataSource_oas)
         def result = sql.firstRow("""select applicant.id, applicant.firstname, applicant.lastname, a.username from applicant
@@ -446,6 +462,7 @@ class OasService {
         return details
     }
 
+    // This function checks if the received student ID exists in our system, and returns the name if it does.
     def checkStudentId(String studentId) {
         Sql sql = Sql.newInstance(dataSource_oas)
         boolean studentIdExist = false
@@ -456,6 +473,7 @@ class OasService {
         return [firstName: result[0]?.firstname ?: "", userId: result[0]?.appuser_id?.toString() ?: "", appId: result[0]?.id?.toString() ?: "", studentIdExist: studentIdExist]
     }
 
+    // This function authenticates the application using user ID and app ID.
     def authApp(String userId, String appId) {
         Sql sql = Sql.newInstance(dataSource_oas)
         boolean auth = false
@@ -496,6 +514,7 @@ class OasService {
         return auth
     }
 
+    // This function returns the received tuition by the specific user.
     def checkIfTuitionIsSent(def userId) {
         Sql sql = Sql.newInstance(dataSource_oas)
         def result = sql.rows("select payment_amount from applicant where id=:userId", [userId: userId])
