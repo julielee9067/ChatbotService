@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletResponse
 
 
 class LoginController {
+    
     def authenticateService
     def authenticationTrustResolver
     def springSecurityService
@@ -29,11 +30,7 @@ class LoginController {
 
     def auth() {
         def sessionEmail = session.getAttribute('sessionEmail')
-
-        if(!sessionEmail) {
-            session.setAttribute('sessionEmail', grailsApplication.config.grails.mail.overrideAddress)
-        }
-
+        if(!sessionEmail) session.setAttribute('sessionEmail', grailsApplication.config.grails.mail.overrideAddress)
         def config = SpringSecurityUtils.securityConfig
 
         if (springSecurityService.isLoggedIn()) {
@@ -66,8 +63,7 @@ class LoginController {
     }
 
     def denied() {
-        if (springSecurityService.isLoggedIn() &&
-                authenticationTrustResolver.isRememberMe(SecurityContextHolder.context?.authentication)) {
+        if (springSecurityService.isLoggedIn() && authenticationTrustResolver.isRememberMe(SecurityContextHolder.context?.authentication)) {
             redirect action: 'full', params: params
         }
     }
@@ -100,9 +96,7 @@ class LoginController {
             }
         }
 
-        if (springSecurityService.isAjax(request)) {
-            render([error: msg] as JSON)
-        }
+        if (springSecurityService.isAjax(request)) render([error: msg] as JSON)
         else {
             flash.message = msg
             redirect action: 'auth', params: params
