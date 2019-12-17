@@ -15,6 +15,7 @@ from botocore.exceptions import ClientError
 from datetime import datetime, timedelta
 
 
+# Gets secrets from AWS Secrets Manager
 def get_secret():
     secret_name = "TestChatbot"
     region_name = "us-east-1"
@@ -62,6 +63,7 @@ def get_secret():
             decoded_binary_secret = base64.b64decode(get_secret_value_response['SecretBinary'])
 
 
+# Updates intent utterance table in the backend using AWS DynamoDB table
 def upload_intent_info(event, context):
     secrets_resp = get_secret()
     secrets_data = json.loads(secrets_resp)
@@ -115,7 +117,8 @@ def upload_intent_info(event, context):
 
     return counter
 
-    
+
+# Updates transcript table using AWS DynamoDB table
 def upload_transcript(event,context):
     secrets_resp = get_secret()
     secrets_data = json.loads(secrets_resp)
