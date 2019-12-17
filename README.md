@@ -5,8 +5,11 @@ Chatbot service project for Intellisoft Development Inc.
 Please read the word file in documents folder for detailed explanation about the website.
 Also, you can take a look at controllers and services to learn more about our backend services.
 
-# Sample Image
+# Chatbot Service Website Image
 ![Chatbot service transcript index](https://github.com/julielee9067/ChatbotService/blob/master/src/groovy/ca/georgebrown/ChatbotServiceIndex.png)
+
+# Chatbot Conversation Image
+![Chatbot conversation index](https://github.com/julielee9067/ChatbotService/blob/master/src/groovy/ca/georgebrown/ChatbotConversation.png)
 
 # Contribution
 My contributions to this project include, but are not limited to, ```grails-app/controllers, services, and views.```
