@@ -279,7 +279,8 @@ def dispatch(intent_request):
             return change_app(intent_request)
         elif intent_name == 'getTuitionByUser':
             return get_tuition_by_user(intent_request)
-        
+        elif intent_name == 'paymentCheck':
+            return payment_check(intent_request)        
         raise Exception('Intent with name ' + intent_name + ' not supported')
     except Exception as e:
         print(e)
