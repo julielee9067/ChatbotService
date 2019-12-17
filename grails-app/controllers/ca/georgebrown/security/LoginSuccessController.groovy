@@ -18,7 +18,6 @@ class LoginSuccessController {
             redirect uri: targetUrl
             return
         }
-
         if(!user) {
             redirect(controller:"login")
             return
@@ -35,7 +34,6 @@ class LoginSuccessController {
             redirect(controller: "userManagement", action: "index")
             return
         }
-
         if(Approle.findByAuthority('ROLE_WS_ACCT') in user.authorities){
             redirect(controller: "userManagement", action: "wsAcct")
             return
