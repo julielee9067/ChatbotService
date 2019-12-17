@@ -9,7 +9,7 @@ import boto3
 import base64
 from botocore.exceptions import ClientError
 from boto3.dynamodb.conditions import Key, Attr
-from authUser import auth_session
+from auth_user import auth_session
 import decimal
 import dateutil.tz
 
