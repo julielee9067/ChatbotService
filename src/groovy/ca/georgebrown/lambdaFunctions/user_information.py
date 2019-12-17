@@ -8,7 +8,7 @@ from botocore.vendored import requests
 import boto3
 import base64
 from botocore.exceptions import ClientError
-from auth import auth_session
+from auth_user import auth_session
 import escalate
 from socket import *
 
@@ -137,32 +137,27 @@ def get_secret():
 
 
 """ --- Functions that control the bot's behavior --- """
-
+# modifies the application
 def change_app(intent_request):
     session_attributes = intent_request['sessionAttributes'] if intent_request['sessionAttributes'] is not None else {}
     authItem = auth_session(intent_request)
-    print('authItem is: ')
-    print(authItem)
     
     if(type(authItem) == dict):
         return authItem
     
-    print('session_attributes["authRole"] is: ')
     if(str(session_attributes['authRole']) not in ['5', '4']):
             return close(session_attributes, 'Fulfilled', {'contentType': 'PlainText', 'content': 'You are not authorized to change applications.'})
+    
     return close(session_attributes, 'Fulfilled', {'contentType': 'PlainText', 'content': 'The applicant has been changed to ' + session_attributes['authAppDetails']})
 
 
+# returns the status of the user's application
 def get_status(intent_request):
     session_attributes = intent_request['sessionAttributes'] if intent_request['sessionAttributes'] is not None else {}
-    
-    # get username and password from secrets manager
     secrets_resp = get_secret()
     secrets_data = json.loads(secrets_resp)
     username = secrets_data['username']
     password = secrets_data['password']
-    
-    #check auth 
     authItem = auth_session(intent_request)
     
     if(type(authItem) == dict):
@@ -171,7 +166,6 @@ def get_status(intent_request):
     if authItem == "true" :
         appId = session_attributes['GBCappId']
         url = 'https://dmzmsa01.georgebrown.ca/ChatbotService/api/getStatus?username=' + username + '&password=' + password + '&appId=' + appId
-        print('here' + url)
         
         response = requests.get(url)
         data = response.json()
@@ -198,6 +192,7 @@ def get_status(intent_request):
     )
     
 
+# returns the tuition for the program the user has applied for
 def get_tuition_by_user(intent_request):
     session_attributes = intent_request['sessionAttributes'] if intent_request['sessionAttributes'] is not None else {}
     secrets_resp = get_secret()
@@ -235,16 +230,49 @@ def get_tuition_by_user(intent_request):
             'content': message + 'If you did not find what you were looking for, you could check all of our international student tuition information on a following website: https://www.georgebrown.ca/international/futurestudents/tuitionfees/.'
         }
     ) 
+   
+# returns the tuition the user has paid for
+def payment_check(intent_request):
+    session_attributes = intent_request['sessionAttributes'] if intent_request['sessionAttributes'] is not None else {}
+    authItem = auth_session(intent_request)
+   
+    if(type(authItem) == dict):
+        return authItem
     
-    
+    if authItem == "true" : 
+        secrets_resp = get_secret()
+        secrets_data = json.loads(secrets_resp)
+        username = secrets_data['username']
+        password = secrets_data['password']
+        userId = session_attributes['GBCuserId']
+ 
+        url = 'https://dmzmsa01.georgebrown.ca/ChatbotService/api/checkIfTuitionIsSent?username=' + username + '&password=' + password + '&userId=' + userId
+        response = requests.get(url)
+        data = response.json()
+        
+        if (data['success'] == True):
+            message = data['message']
+        else:
+            message = "Whoops. Something went wrong"
+    else:
+        message = "Whoops. Something went wrong"
+
+    return close(
+        session_attributes,
+        'Fulfilled',
+        {
+            'contentType': 'PlainText',
+            'content': message
+        }
+    )
+
+
 # --- Intents ---
 def dispatch(intent_request):
     logger.debug('dispatch userId={}, intentName={}'.format(intent_request['userId'], intent_request['currentIntent']['name']))
     intent_name = intent_request['currentIntent']['name']
-    
     try:
         escalate.write_to_intent_table(intent_request)
-    
         if intent_name == 'getStatus':
             return get_status(intent_request)
         elif intent_name == 'changeApplicant': 
