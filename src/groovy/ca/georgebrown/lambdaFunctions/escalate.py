@@ -64,20 +64,22 @@ def delegate(session_attributes, slots):
 
 
 # --- Helper Functions ---
-
+# safely converts the input to the integer
 def safe_int(n):
     if n is not None:
         return int(n)
     return n
 
 
+# puts the function in try catch block
 def try_ex(func):
     try:
         return func()
     except KeyError:
         return None
     
-    
+
+# gets secrets from AWS Secrets Manager
 def get_secret():
     secret_name = "TestChatbot"
     region_name = "us-east-1"
@@ -125,33 +127,8 @@ def get_secret():
 
 
 """ --- Dynamo functions --- """
-def get_first_bubble_to_be_returned(session_attributes):
-    #set -up table
-    dynamodb = boto3.resource('dynamodb', region_name='us-east-1')
-    table = dynamodb.Table('AskGeorgeTranscriptV6')
-    
-    #set up query parameters
-    now = datetime.datetime.now().strftime("%Y-%m-%d-%H-%M-%S") 
-    before = (datetime.datetime.now() - datetime.timedelta(minutes = 60)).strftime("%Y-%m-%d-%H-%M-%S")
-    token = session_attributes['GBCToken']
-    orderString = session_attributes['order']
-    orderMax = int(orderString, 10)
-    numBubbles = 10
-    orderMin = orderMax - numBubbles
-    
-    if(orderMin < 1):
-        orderMin = 1
-    
-    response = table.query(
-        ProjectionExpression="OrderBubble, Dialog, ChatMessage",
-        KeyConditionExpression = Key('UserIdPrimaryKey').eq(token) & Key('OrderBubble').between(orderMin, orderMin))
-    
-    if(response['Items']):
-        return "Every bubble after \'" + response['Items'][0]['ChatMessage'] + "\' will be e-mailed to an admission officer to further assist you. \nWould you rather directly talk to our admissions officer?"
-    else:
-        return "I will e-mail an admission officer that you had a problem, but there wasn't anything in the transcript."
-    
-    
+
+# gets the transcript from DynamoDB table
 def get_transcript(session_attributes):
     #set up table
     dynamodb = boto3.resource('dynamodb', region_name='us-east-1')
@@ -163,7 +140,7 @@ def get_transcript(session_attributes):
     token = session_attributes['GBCToken']
     orderString = session_attributes['order']
     orderMax = int(orderString, 10) - 2
-    numBubbles = 19 # WHY IS THIS 19????
+    numBubbles = 19
     orderMin = orderMax - numBubbles
     
     if(orderMin < 1):
@@ -177,6 +154,7 @@ def get_transcript(session_attributes):
     return response
 
 
+# returns the first message the email should contain from the conversation.
 def get_first_bubble_to_be_returned(session_attributes):
     #set up table
     dynamodb = boto3.resource('dynamodb', region_name='us-east-1')
@@ -209,6 +187,7 @@ def get_email(intent_request):
     return sendee_email
 
 
+# checks if the user email exists in the database, and if it doesn't, ask manually to enter the user's email address.
 def send_email(intent_request):
     session_attributes = intent_request['sessionAttributes'] if intent_request['sessionAttributes'] is not None else {}
     authItem = auth_session(intent_request)
