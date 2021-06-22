@@ -1,5 +1,5 @@
 # ChatbotService
-Chatbot service project for Intellisoft Development Inc.
+Chatbot service project
 
 # Instruction
 Please read the word file in documents folder for detailed explanation about the website.
